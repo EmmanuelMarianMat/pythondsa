@@ -3,7 +3,6 @@ class MyHashMap:
     def __init__(self):
         self.cap = 20
         self.table = [None]*self.cap
-        self.length = 0
 
     
     def add(self,key,value):
@@ -82,7 +81,7 @@ def main():
     print(my_dict.get(5))
     print(my_dict.get(33))
     print(my_dict.get(14))
-    my_dict.delete(3)
+    my_dict.delete(-17)
     my_dict.add(43,4)
     my_dict.add(1,-1)
     my_dict.add(5,-2)
