@@ -10,13 +10,11 @@ class MyHashMap:
         for _ in range(self.cap):
             if self.table[hashed_key]==None:
                 self.table[hashed_key] = (key,value)
-                print(self.table)
                 return
             else:
                 hashed_key = (hashed_key+1)%self.cap
 
         print("Could not insert")
-        print(self.table)
         
 
     def exists(self,key):
@@ -50,15 +48,12 @@ class MyHashMap:
             if self.table[hashed_key]==None:
                 break
             elif self.table[hashed_key][0]==key:
-                self.length-=1
                 self.table[hashed_key] = (inf,0)
-                print(self.table)
                 return
             else:
                 hashed_key = (hashed_key+1)%self.cap
 
         print("No such key in the table to delete")
-        print(self.table)
 
 
 
@@ -81,13 +76,25 @@ def main():
     print(my_dict.get(5))
     print(my_dict.get(33))
     print(my_dict.get(14))
-    my_dict.delete(-17)
+    my_dict.delete(3)
     my_dict.add(43,4)
     my_dict.add(1,-1)
     my_dict.add(5,-2)
     my_dict.add(6,-9)
     my_dict.add(7,-8)
     my_dict.add(-11,-5)
+    my_dict.add(-43,4)
+    my_dict.add(-1,-1)
+    my_dict.add(-5,-2)
+    my_dict.add(-6,-9)
+    my_dict.add(-7,-8)
+    my_dict.add(11,-5)
+    my_dict.add(-2,-1)
+    my_dict.add(-15,-2)
+    my_dict.add(-64,-9)
+    my_dict.add(-72,-8)
+    my_dict.add(111,-5)
+    my_dict.delete(112)
 
 
 main()
