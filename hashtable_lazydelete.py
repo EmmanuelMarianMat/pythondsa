@@ -8,7 +8,7 @@ class MyHashMap:
     def add(self,key,value):
         hashed_key = key%self.cap
         for _ in range(self.cap):
-            if self.table[hashed_key]==None:
+            if self.table[hashed_key]==None or self.table[hashed_key][0]==key:
                 self.table[hashed_key] = (key,value)
                 return
             else:
@@ -95,6 +95,7 @@ def main():
     my_dict.add(-72,-8)
     my_dict.add(111,-5)
     my_dict.delete(112)
+    my_dict.delete(-64)
 
 
 main()
